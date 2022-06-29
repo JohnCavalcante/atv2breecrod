@@ -1,0 +1,40 @@
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class atv_29 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		Locale.setDefault(Locale.US);
+		double nota1,nota2;
+		int opcao;
+		final String OPCOES = "novo calculo (1- sim 2-não)";
+		final String NOTA_INVALIDA = "nota invalida";
+		
+		do {
+			do {
+				nota1= sc.nextDouble();
+				if (nota1 > 10|| nota1 < 0) {
+					System.out.println(NOTA_INVALIDA);
+				}
+			}while (nota1 > 10||nota1 < 0);
+			do {
+				nota2 = sc.nextDouble();
+				if (nota2 > 10|| nota2 < 0) {
+					System.out.println(NOTA_INVALIDA);
+				}
+			}while (nota2 > 10||nota2 < 0);
+			
+			double media = (nota1 + nota2)/2;
+			System.out.println("media = " + media);
+			
+			do {
+				System.out.println(OPCOES);
+				opcao = sc.nextInt();
+			}while(opcao != 1 && opcao !=2);
+		}while (opcao ==1);
+		
+	}
+
+}
